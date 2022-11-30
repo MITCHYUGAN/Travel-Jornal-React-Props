@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import TravelJornal from './components/TravelJornal'
+import Header from './components/Header';
+import  Data  from './Data';
 import './App.css';
 
 function App() {
+  const PostsData = Data.map( PostData => {
+    console.log(PostData.imageUrl)
+    return(
+       <TravelJornal 
+          key= {PostData.id}
+          title= {PostData.title}
+          loImg= {PostData.locationIcon}
+          image= {PostData.imageUrl}
+          location= {PostData.location}
+          hr = {PostData.hr}
+          startDate= {PostData.startDate}
+          endDate= {PostData.endDate}
+          description= {PostData.description}
+       />
+    )
+  })
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      {PostsData}
     </div>
   );
 }
