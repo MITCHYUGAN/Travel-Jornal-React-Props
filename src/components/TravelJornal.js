@@ -1,16 +1,13 @@
-import img1 from '../Img/img3.png'
-import location from '../Img/location.png'
- 
 const TravelJornal = (props) =>{
     console.log(props.img)
     return(
         <div className='posts'>
             <div className='post'>
-                <img className='image' src={props.image} />
+                <img className='image' src={props.image} alt='Contentimages' />
                 <div>
                     <div className='map'>
                         <div className='location'>
-                            <img src={props.loImg} />
+                            <img src={props.loImg}  alt='Locationimages'/>
                             <p>{props.location}</p>
                         </div>
                         <p>View on Google Maps</p>
